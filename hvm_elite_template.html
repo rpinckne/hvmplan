@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[FIRST_NAME] x HVM Elite Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #111;
+        }
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            color: #fff;
+        }
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-size: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1em;
+        }
+        h3 {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 600;
+        }
+        h4 {
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+        }
+        p {
+            margin-bottom: 1em;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 2em;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        .page-break {
+            display: none;
+        }
+        .cover-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #111;
+            color: #fff;
+            position: relative;
+            padding: 2rem 1rem;
+        }
+        .cover-title {
+            font-size: 42px;
+            margin-bottom: 0.2em;
+            color: #fff;
+            font-weight: 800;
+        }
+        .cover-subtitle {
+            font-size: 32px;
+            margin-bottom: 1em;
+            color: #fff;
+            font-weight: 600;
+        }
+        .cover-branding {
+            font-size: 18px;
+            margin-top: 2em;
+            font-style: normal;
+            color: #fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .logo-placeholder {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2em;
+            color: #fff;
+            font-weight: 700;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .quick-start {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1.5em;
+            margin: 1.5em 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .week-section {
+            margin-bottom: 2em;
+        }
+        .exercise-box, .challenge-box {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1.5em;
+            margin: 1.5em 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .exercise-box h4, .challenge-box h4 {
+            margin-top: 0;
+        }
+        .why-matters {
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            padding: 1em 1.5em;
+            margin: 1.5em 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .ritual-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 5px solid rgba(255, 255, 255, 0.4);
+            padding: 1.5em;
+            margin: 2em 0;
+            border-radius: 4px;
+        }
+        .ritual-box h4 {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 1em;
+            color: #fff;
+        }
+        .ritual-box p strong {
+            font-weight: 600;
+            color: #fff;
+        }
+        .ritual-box ol {
+            margin: 1em 0 1.5em 1.5em;
+        }
+        .ritual-box li {
+            margin-bottom: 0.8em;
+            line-height: 1.5;
+        }
+        .ritual-box .tips {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 1em 1.5em;
+            margin: 1.5em 0 0.5em;
+            border-radius: 4px;
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        .time-required {
+            margin: 1.2em 0;
+            font-weight: 500;
+        }
+        .scaling-options {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 1em;
+            margin: 1em 0;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .tips {
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            padding: 1em 1.5em;
+            margin: 1.5em 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .evidence-box {
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            padding: 1em 1.5em;
+            margin: 1.5em 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .mind {
+            border-left: 5px solid rgba(74, 144, 226, 0.7);
+        }
+        .body {
+            border-left: 5px solid rgba(80, 200, 120, 0.7);
+        }
+        .heart {
+            border-left: 5px solid rgba(231, 76, 60, 0.7);
+        }
+        .hustle {
+            border-left: 5px solid rgba(255, 255, 255, 0.7);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 3em;
+            padding-top: 1em;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .section-page {
+            min-height: auto;
+            padding: 4rem 0;
+            scroll-margin-top: 2rem;
+        }
+        .accent-text {
+            color: #fff;
+            font-weight: 500;
+            display: inline-block;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 2px;
+            letter-spacing: 0.5px;
+        }
+        .section-header {
+            margin-bottom: 1.5em;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .week-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5em;
+        }
+        .monthly-focus {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2em;
+            margin: 1.5em 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .focus-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1em;
+        }
+        .focus-icon {
+            width: 24px;
+            margin-right: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+        }
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 1em;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .section-subtitle {
+            font-size: 22px;
+            margin: 1.5em 0 1em;
+            color: #fff;
+        }
+        .daily-ritual-heading {
+            font-size: 24px;
+            margin: 1.5em 0 1em;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5em;
+        }
+        .daily-ritual-heading:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .section-divider {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 2em 0;
+            width: 100%;
+        }
+        @media print {
+        }
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1em;
+            margin: 1em 0;
+        }
+        @media (min-width: 768px) {
+            .exercise-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .exercise-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.3em;
+        }
+        .exercise-content {
+            margin-bottom: 1em;
+        }
+        .exercise-box h4, .challenge-box h4 {
+            margin-top: 0;
+            margin-bottom: 1em;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5em;
+        }
+        .exercise-description {
+            margin-bottom: 1.5em;
+        }
+        .exercise-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1em 0;
+            padding: 0.5em 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .meta-item {
+            font-size: 14px;
+        }
+        .meta-value {
+            font-weight: 500;
+            color: #fff;
+        }
+        .why-matters {
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            padding: 1em 1.5em;
+            margin: 1.5em 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .why-matters p {
+            margin-bottom: 0;
+        }
+        .why-matters-title {
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 0.5em;
+            font-style: normal;
+        }
+        .week-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.3em;
+            margin-bottom: 1.5em;
+            max-width: 90%;
+            line-height: 1.5;
+        }
+        .week-subtitle .accent-text {
+            font-weight: 500;
+            border-bottom: none;
+            color: #fff;
+        }
+        
+        @media (max-width: 1024px) {
+            body {
+                padding: 1.5rem;
+            }
+            .cover-title {
+                font-size: 36px;
+            }
+            .cover-subtitle {
+                font-size: 28px;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            .cover-title {
+                font-size: 32px;
+            }
+            .cover-subtitle {
+                font-size: 24px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+            .monthly-focus {
+                padding: 1.5em;
+            }
+            .ritual-box {
+                padding: 1.2em;
+            }
+            .exercise-box, .challenge-box {
+                padding: 1.2em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 0.8rem;
+            }
+            .cover-title {
+                font-size: 28px;
+            }
+            .cover-subtitle {
+                font-size: 22px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            h4 {
+                font-size: 16px;
+            }
+            .monthly-focus {
+                padding: 1.2em;
+            }
+            .ritual-box {
+                padding: 1em;
+            }
+            .exercise-box, .challenge-box {
+                padding: 1em;
+            }
+            .why-matters, .tips, .evidence-box {
+                padding: 0.8em 1em;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Cover/Title Page -->
+    <div id="cover" class="cover-page">
+        <div class="logo-placeholder">HVM Elite</div>
+        <h1 class="cover-title">[FIRST_NAME] x HVM Elite</h1>
+        <h2 class="cover-subtitle">Month [MONTH_NUMBER]</h2>
+        <p class="cover-branding">Become Him.</p>
+    </div>
+    
+    <!-- Monthly Focus - Consolidated Section -->
+    <div id="monthly-focus" class="section-page">
+        <div class="section-header">
+            <h1>Monthly Focus</h1>
+        </div>
+        <div class="monthly-focus">
+            <h2 class="section-title">[MONTHLY_THEME_TITLE]</h2>
+            <p>[MONTHLY_THEME_DESCRIPTION]</p>
+            
+            <div class="why-matters">
+                <div class="why-matters-title">Why It Matters</div>
+                <p>[WHY_IT_MATTERS]</p>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <h3 class="daily-ritual-heading">Your Daily Ritual</h3>
+            <div class="ritual-box">
+                <h4>[DAILY_RITUAL_TITLE]</h4>
+                <p><strong>Instructions:</strong></p>
+                <ol>
+                    <li>[RITUAL_STEP_1]</li>
+                    <li>[RITUAL_STEP_2]</li>
+                    <li>[RITUAL_STEP_3]</li>
+                </ol>
+                <p class="time-required"><strong>Time:</strong> [RITUAL_TIME_REQUIRED]</p>
+                <div class="tips">
+                    <div class="why-matters-title">Tips</div>
+                    <p>[RITUAL_TIP]</p>
+                </div>
+                <div class="evidence-box">
+                    <div class="why-matters-title">Evidence</div>
+                    <p>[DAILY_RITUAL_EVIDENCE]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 5. Weekly Breakdown -->
+    <div id="week1" class="section-page">
+        <div class="section-header">
+            <h1>Your Weekly Journey</h1>
+        </div>
+        
+        <div class="week-header">
+            <h2>Week 1: [PILLAR_1]</h2>
+        </div>
+        
+        <h3>Days 1–3 Exercise</h3>
+        <div class="exercise-box mind">
+            <h4>[WEEK_1_EXERCISE_TITLE]</h4>
+            
+            <div class="exercise-description">
+                <ol>
+                    <li>[WEEK_1_STEP_1]</li>
+                    <li>[WEEK_1_STEP_2]</li>
+                    <li>[WEEK_1_STEP_3]</li>
+                </ol>
+            </div>
+            
+            <div class="exercise-meta">
+                <div class="meta-item">
+                    <span class="exercise-label">Time</span>
+                    <div class="meta-value">[WEEK_1_TIME]</div>
+                </div>
+            </div>
+            
+            <div class="why-matters">
+                <div class="why-matters-title">Why It Matters</div>
+                <p>[WEEK_1_WHY_IT_MATTERS]</p>
+            </div>
+            
+            <div class="tips">
+                <div class="why-matters-title">Tips</div>
+                <p>[WEEK_1_TIPS]</p>
+            </div>
+            
+            <div class="evidence-box">
+                <div class="why-matters-title">Evidence</div>
+                <p>[WEEK_1_EVIDENCE]</p>
+            </div>
+            
+            <p><em>Complete this alongside your daily ritual from the Monthly Focus.</em></p>
+        </div>
+        
+        <h3>Day 4 Challenge <span style="font-weight: 400; opacity: 0.7;">(optional)</span></h3>
+        <div class="challenge-box mind">
+            <h4>[WEEK_1_CHALLENGE_TITLE]</h4>
+            
+            <div class="exercise-grid">
+                <div class="exercise-content">
+                    <div class="exercise-label">Goal</div>
+                    <p>[WEEK_1_CHALLENGE_GOAL]</p>
+                </div>
+                
+                <div class="exercise-content">
+                    <div class="exercise-label">Time</div>
+                    <p>[WEEK_1_CHALLENGE_TIME]</p>
+                </div>
+            </div>
+            
+            <div class="exercise-content">
+                <div class="exercise-label">Note</div>
+                <p>[WEEK_1_CHALLENGE_NOTE]</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Week 2 -->
+    <div id="week2" class="section-page">
+        <div class="week-header">
+            <h2>Week 2: [PILLAR_2]</h2>
+        </div>
+        
+        <h3>Days 1–3 Exercise</h3>
+        <div class="exercise-box body">
+            <h4>[WEEK_2_EXERCISE_TITLE]</h4>
+            
+            <div class="exercise-description">
+                <ol>
+                    <li>[WEEK_2_STEP_1]</li>
+                    <li>[WEEK_2_STEP_2]</li>
+                    <li>[WEEK_2_STEP_3]</li>
+                </ol>
+            </div>
+            
+            <div class="exercise-meta">
+                <div class="meta-item">
+                    <span class="exercise-label">Time</span>
+                    <div class="meta-value">[WEEK_2_TIME]</div>
+                </div>
+            </div>
+            
+            <div class="why-matters">
+                <div class="why-matters-title">Why It Matters</div>
+                <p>[WEEK_2_WHY_IT_MATTERS]</p>
+            </div>
+            
+            <div class="tips">
+                <div class="why-matters-title">Tips</div>
+                <p>[WEEK_2_TIPS]</p>
+            </div>
+            
+            <div class="evidence-box">
+                <div class="why-matters-title">Evidence</div>
+                <p>[WEEK_2_EVIDENCE]</p>
+            </div>
+            
+            <p><em>Complete this alongside your daily ritual from the Monthly Focus.</em></p>
+        </div>
+        
+        <h3>Day 4 Challenge <span style="font-weight: 400; opacity: 0.7;">(optional)</span></h3>
+        <div class="challenge-box body">
+            <h4>[WEEK_2_CHALLENGE_TITLE]</h4>
+            
+            <div class="exercise-grid">
+                <div class="exercise-content">
+                    <div class="exercise-label">Goal</div>
+                    <p>[WEEK_2_CHALLENGE_GOAL]</p>
+                </div>
+                
+                <div class="exercise-content">
+                    <div class="exercise-label">Time</div>
+                    <p>[WEEK_2_CHALLENGE_TIME]</p>
+                </div>
+            </div>
+            
+            <div class="exercise-content">
+                <div class="exercise-label">Note</div>
+                <p>[WEEK_2_CHALLENGE_NOTE]</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Week 3 -->
+    <div id="week3" class="section-page">
+        <div class="week-header">
+            <h2>Week 3: [PILLAR_3]</h2>
+        </div>
+        
+        <h3>Days 1–3 Exercise</h3>
+        <div class="exercise-box heart">
+            <h4>[WEEK_3_EXERCISE_TITLE]</h4>
+            
+            <div class="exercise-description">
+                <ol>
+                    <li>[WEEK_3_STEP_1]</li>
+                    <li>[WEEK_3_STEP_2]</li>
+                    <li>[WEEK_3_STEP_3]</li>
+                </ol>
+            </div>
+            
+            <div class="exercise-meta">
+                <div class="meta-item">
+                    <span class="exercise-label">Time</span>
+                    <div class="meta-value">[WEEK_3_TIME]</div>
+                </div>
+            </div>
+            
+            <div class="why-matters">
+                <div class="why-matters-title">Why It Matters</div>
+                <p>[WEEK_3_WHY_IT_MATTERS]</p>
+            </div>
+            
+            <div class="tips">
+                <div class="why-matters-title">Tips</div>
+                <p>[WEEK_3_TIPS]</p>
+            </div>
+            
+            <div class="evidence-box">
+                <div class="why-matters-title">Evidence</div>
+                <p>[WEEK_3_EVIDENCE]</p>
+            </div>
+            
+            <p><em>Complete this alongside your daily ritual from the Monthly Focus.</em></p>
+        </div>
+        
+        <h3>Day 4 Challenge <span style="font-weight: 400; opacity: 0.7;">(optional)</span></h3>
+        <div class="challenge-box heart">
+            <h4>[WEEK_3_CHALLENGE_TITLE]</h4>
+            
+            <div class="exercise-grid">
+                <div class="exercise-content">
+                    <div class="exercise-label">Goal</div>
+                    <p>[WEEK_3_CHALLENGE_GOAL]</p>
+                </div>
+                
+                <div class="exercise-content">
+                    <div class="exercise-label">Time</div>
+                    <p>[WEEK_3_CHALLENGE_TIME]</p>
+                </div>
+            </div>
+            
+            <div class="exercise-content">
+                <div class="exercise-label">Note</div>
+                <p>[WEEK_3_CHALLENGE_NOTE]</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Week 4 -->
+    <div id="week4" class="section-page">
+        <div class="week-header">
+            <h2>Week 4: [PILLAR_4]</h2>
+        </div>
+        
+        <h3>Days 1–3 Exercise</h3>
+        <div class="exercise-box hustle">
+            <h4>[WEEK_4_EXERCISE_TITLE]</h4>
+            
+            <div class="exercise-description">
+                <ol>
+                    <li>[WEEK_4_STEP_1]</li>
+                    <li>[WEEK_4_STEP_2]</li>
+                    <li>[WEEK_4_STEP_3]</li>
+                </ol>
+            </div>
+            
+            <div class="exercise-meta">
+                <div class="meta-item">
+                    <span class="exercise-label">Time</span>
+                    <div class="meta-value">[WEEK_4_TIME]</div>
+                </div>
+            </div>
+            
+            <div class="why-matters">
+                <div class="why-matters-title">Why It Matters</div>
+                <p>[WEEK_4_WHY_IT_MATTERS]</p>
+            </div>
+            
+            <div class="tips">
+                <div class="why-matters-title">Tips</div>
+                <p>[WEEK_4_TIPS]</p>
+            </div>
+            
+            <div class="evidence-box">
+                <div class="why-matters-title">Evidence</div>
+                <p>[WEEK_4_EVIDENCE]</p>
+            </div>
+            
+            <p><em>Complete this alongside your daily ritual from the Monthly Focus.</em></p>
+        </div>
+        
+        <h3>Day 4 Challenge <span style="font-weight: 400; opacity: 0.7;">(optional)</span></h3>
+        <div class="challenge-box hustle">
+            <h4>[WEEK_4_CHALLENGE_TITLE]</h4>
+            
+            <div class="exercise-grid">
+                <div class="exercise-content">
+                    <div class="exercise-label">Goal</div>
+                    <p>[WEEK_4_CHALLENGE_GOAL]</p>
+                </div>
+                
+                <div class="exercise-content">
+                    <div class="exercise-label">Time</div>
+                    <p>[WEEK_4_CHALLENGE_TIME]</p>
+                </div>
+            </div>
+            
+            <div class="exercise-content">
+                <div class="exercise-label">Note</div>
+                <p>[WEEK_4_CHALLENGE_NOTE]</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; HVM Elite - Become Him</p>
+    </div>
+</body>
+</html> 
